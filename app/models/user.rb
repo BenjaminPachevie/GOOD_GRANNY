@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :password, length: { in: 6..20 }
   validates :email, format: { with: /\A.*@.*\.com\z/ }
+
   
+
 
 end
