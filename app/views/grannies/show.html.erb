@@ -1,6 +1,12 @@
 <%= @granny.name %>
 <%= @granny.presentation %>
 <%= @granny.location %>
-<% @granny.photos.each do |photo| %>
-  <%= cl_image_tag photo.key %>
-<% end %>
+
+<div class="container">
+  <%= simple_form_for [@granny, @reservation] do |f| %>
+    <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+    <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+    <%= f.input :category_booked, collection: @granny.categories.pluck(:name) %>
+    <%= f.submit %>
+  <% end %>
+</div>
