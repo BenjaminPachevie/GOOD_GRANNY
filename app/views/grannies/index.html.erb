@@ -1,4 +1,58 @@
-<% @grannies.each do |granny| %>
-  <%= granny.name %>
-  <%= granny.location %>
-<% end %>
+
+<div class="container">
+    <h1>Our grannies</h1>
+
+    <div class="grannies">
+
+      <% @grannies.each do |granny| %>
+        <div class="card-granny">
+        <%= granny.name %>
+        </div>
+      <% end %>
+
+      <%# <div class="card-granny">
+        Micheline
+      </div>
+
+      <div class="card-granny">
+        Huguette
+      </div>
+
+      <div class="card-granny">
+        Jeannine
+      </div>
+
+      <div class="card-granny">
+        Raymonde
+      </div>
+
+      <div class="card-granny">
+        Madeleine
+      </div>
+
+      <div class="card-granny">
+        Lucienne
+      </div>
+
+      <div class="card-granny">
+        Ginette
+      </div>
+
+      <div class="card-granny">
+        Thérèse
+      </div>
+
+      <div class="card-granny">
+        Simone
+      </div>
+
+      <div class="card-granny">
+        Colette
+      </div>
+
+      <div class="card-granny">
+        Yvette
+      </div> %>
+    </div>
+
+</div>

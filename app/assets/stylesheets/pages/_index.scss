@@ -1,2 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "components/index";
+
+h1 {
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 40px;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'Courgette', cursive;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
