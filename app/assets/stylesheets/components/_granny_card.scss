@@ -1,6 +1,6 @@
 .grannies {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   color: white;
   padding-top: 40px;
@@ -14,23 +14,55 @@
   background-color: #DBC4F0 ;
   height: 240px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  color: white;
-  font-size: 42px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.desc {
+.top-card-granny {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.name-granny {
+  // height: 240px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  align-items: center;
+  font-size: 22px;
+  font-family: 'Courgette', cursive;
+}
+
+.categories {
+  // height: 240px;
+  color: white;
+  justify-content: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  font-size: 16px;
+  display: flex;
+  width: 80px;
+  border: 1px solid #FAF3F0;
+  border-radius: 50px;
+  height: 30px;
+  background-color: #e2d2f2;
+}
+
+.presentation {
   height: 240px;
   color: rgba(0, 0, 0, 0.491);
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 14px;
   font-style: italic;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: #e2d2f2;
 }
 
 
@@ -65,6 +97,6 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .grannies {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
