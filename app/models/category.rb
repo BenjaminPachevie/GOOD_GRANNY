@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  CATEGORIES = ["cooking", "sewing", "gardening", "life advices"]
+  CATEGORIES = ["cusine", "couture", "jardinage", "conseils de vie"]
   belongs_to :granny
   validates :name, presence: true, inclusion: { in: CATEGORIES }
 
