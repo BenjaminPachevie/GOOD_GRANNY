@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :reservations, only: :create
   end
   resources :reservations, only: :destroy
+  get 'profile/:id', to: 'pages#profile', as: 'profile'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
