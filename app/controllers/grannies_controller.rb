@@ -5,9 +5,11 @@ class GranniesController < ApplicationController
     @markers = @grannies.geocoded.map do |granny|
       {
         lat: granny.latitude,
-        lng: granny.longitude
+        lng: granny.longitude,
+        marker_html: render_to_string(partial: "marker")
       }
     end
+
   end
 
   def show
