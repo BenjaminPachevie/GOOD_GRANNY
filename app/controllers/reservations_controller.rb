@@ -2,10 +2,10 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @granny = Granny.find(params[:granny_id])
     @reservation.user = current_user
-    @granny = Granny.find[params[:granny_id]]
     @reservation.granny = @granny
-    if @reservation.save
+    if @reservation.save!
       redirect_to profile_path(current_user)
     else
       render 'grannies/show', status: :unprocessable_entity
@@ -22,6 +22,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:date, :category_booked)
+    params.require(:reservation).permit(:start_date, :end_date, :granny_id, :user_id, :total_price, :status, :category_booked)
   end
 end
