@@ -6,7 +6,9 @@ class GranniesController < ApplicationController
       {
         lat: granny.latitude,
         lng: granny.longitude,
-        marker_html: render_to_string(partial: "marker")
+        marker_html: render_to_string(partial: "marker"),
+        info_window_html: render_to_string(partial: "info_window", locals: {granny: granny})
+
       }
     end
 
@@ -19,7 +21,7 @@ class GranniesController < ApplicationController
 
   def new
     @granny = Granny.new
-    @granny.categories.pluck
+    # @granny.categories.pluck
   end
 
   def create
@@ -27,7 +29,7 @@ class GranniesController < ApplicationController
 
     @granny.user = current_user
 
-    if @granny.save
+    if @granny.save!
       redirect_to granny_path(@granny)
     else
       render :new, status: :unprocessable_entity
@@ -58,6 +60,6 @@ class GranniesController < ApplicationController
 
   def granny_params
     params.required(:granny).permit(:name, :presentation, :location, :price,
-                                    :photo, categories_attributes: %i[name specialty id])
+                                    photos: [], categories_attributes: %i[name specialty id])
   end
 end

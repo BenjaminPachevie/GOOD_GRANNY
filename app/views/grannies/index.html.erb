@@ -1,26 +1,41 @@
 
+
+
 <div class="container">
+
     <h1>Our grannies</h1>
 
-    <div class="grannies">
+    <div class="row">
 
-      <% @grannies.each do |granny| %>
-        <%= link_to granny_path(granny), class:"text-decoration-none" do %>
-          <div class="card-granny">
-            <div class="top-card-granny">
-              <div class="name-granny"><%= granny.name %></div>
-              <div class="categories">Couture</div>
-            </div>
-            <div class="presentation"><%= granny.presentation %></div>
+      <div class="col-8">
+
+          <div class="grannies">
+            <% @grannies.each do |granny| %>
+              <%= link_to granny_path(granny), class:"text-decoration-none" do %>
+                <div class="card-granny">
+                  <div class="top-card-granny">
+                    <div class="name-granny"><%= granny.name %></div>
+                    <div class="categories">Couture</div>
+                  </div>
+                  <div class="presentation"><%= granny.presentation %></div>
+                </div>
+              <% end %>
+            <% end %>
           </div>
-        <% end %>
-      <% end %>
+
+      </div>
+
+      <div class="col-4">
+
+        <div id="map-sticky"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+      </div>
+
+
     </div>
 
-</div>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>

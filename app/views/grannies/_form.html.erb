@@ -1,17 +1,15 @@
 <div class="container pt-2">
   <%= simple_form_for @granny do |f| %>
-    <% categories = ["cuisine", "couture", "jardinage", "conseils de vie"] %>
     <%= f.input :name, label: "Son nom" %>
-    <%= f.simple_fields_for :categories, Category.new, child_index: 'TEMPLATE_RECORD' do |p| %>
+    <%= f.simple_fields_for :categories, Category.new do |p| %>
       <%= p.hidden_field :id %>
-      <%= p.input :name, as: :select, collection: categories, label: "Catégories"%>
+      <%= p.input :name, as: :select, collection: Category::CATEGORIES, label: "Catégories"%>
       <%= p.input :specialty %>
     <% end %>
     <%= f.input :presentation, as: :text, label: "Petite description" %>
     <%= f.input :location %>
     <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }%>
     <%= f.submit "Ajouter" %>
   <% end %>
 </div>
-
