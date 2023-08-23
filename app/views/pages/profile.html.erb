@@ -1,14 +1,15 @@
 <% if current_user == @user %>
-  <%= @user.name %>
 
-<div>
+<div class="profile-card">
   <% @user.grannies.each do |granny| %>
-    <p>Nom: <%= granny.name %></p>
+  <div class="profile-card-granny">
+    <p class="name-granny-profile"><%= granny.name %></p>
     <p>Présentation: <%= granny.presentation %></p>
     <p>Adresse: <%= granny.location %></p>
-    <p>Prix: <%= granny.price %></p>
-    <%= link_to "Modifier mamie", edit_granny_path(granny.id), class: 'btn btn-primary' %>
-    <%= link_to "Supprimer mamie", granny_path(granny), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: 'btn btn-primary' %>
+    <p>Prix: <%= granny.price %>€</p>
+    <%= link_to "Modifier ma granny", edit_granny_path(granny.id), class: 'little-button' %>
+    <%= link_to "Supprimer ma granny", granny_path(granny), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: 'little-button' %>
+  </div>
   <% end  %>
 </div>
   <ul>

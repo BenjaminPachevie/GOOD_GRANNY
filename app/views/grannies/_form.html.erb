@@ -4,12 +4,12 @@
     <%= f.simple_fields_for :categories, Category.new do |p| %>
       <%= p.hidden_field :id %>
       <%= p.input :name, as: :select, collection: Category::CATEGORIES, label: "Catégories"%>
-      <%= p.input :specialty %>
+      <%= p.input :specialty, label: "Spécialités" %>
     <% end %>
-    <%= f.input :presentation, as: :text, label: "Petite description" %>
-    <%= f.input :location %>
-    <%= f.input :price %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true }%>
+    <%= f.input :presentation, as: :text, label: "Description" %>
+    <%= f.input :location, label: "Adresse" %>
+    <%= f.input :price, label: "Prix" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Photo(s)"%>
     <%= f.submit "Ajouter" %>
   <% end %>
 </div>
