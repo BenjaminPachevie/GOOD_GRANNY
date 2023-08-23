@@ -1,5 +1,16 @@
 <% if current_user == @user %>
   <%= @user.name %>
+
+<div>
+  <% @user.grannies.each do |granny| %>
+    <p>Nom: <%= granny.name %></p>
+    <p>Présentation: <%= granny.presentation %></p>
+    <p>Adresse: <%= granny.location %></p>
+    <p>Prix: <%= granny.price %></p>
+    <%= link_to "Modifier mamie", edit_granny_path(granny.id), class: 'btn btn-primary' %>
+    <%= link_to "Supprimer mamie", granny_path(granny), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: 'btn btn-primary' %>
+  <% end  %>
+</div>
   <ul>
     <% @user.reservations.each do |reservation| %>
       <li>
