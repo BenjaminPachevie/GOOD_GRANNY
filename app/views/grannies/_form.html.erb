@@ -1,15 +1,17 @@
-<div class="container">
-  <%= simple_form_for(@granny) do |f| %>
-    <% districts = ["75001", "75002", "75003", "75004", "75005", "75006", "75007",
-    "75008", "75009", "75010", "75011", "75012", "75013", "75014", "75015", "75016",
-    "75017", "75018", "75019", "75020"] %>
+<div class="container pt-2">
+  <%= simple_form_for @granny do |f| %>
     <% categories = ["cuisine", "couture", "jardinage", "conseils de vie"] %>
     <%= f.input :name, label: "Son nom" %>
-    <%# <%= f.input :category, as: :check_boxes, collection: categories %>
+    <%= f.simple_fields_for :categories, Category.new, child_index: 'TEMPLATE_RECORD' do |p| %>
+      <%= p.hidden_field :id %>
+      <%= p.input :name, as: :select, collection: categories, label: "Catégories"%>
+      <%= p.input :specialty %>
+    <% end %>
     <%= f.input :presentation, as: :text, label: "Petite description" %>
-    <%= f.input :location, as: :check_boxes, collection: districts %>
+    <%= f.input :location %>
     <%= f.input :price %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Ajouter" %>
   <% end %>
 </div>
 
