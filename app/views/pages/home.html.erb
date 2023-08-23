@@ -1,11 +1,12 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1597528662465-55ece5734101?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80);">
-  <div class="container">
+<div class="banner" style="background-image: url(<%= asset_url('banner') %>);">
+  <div class="container d-flex flex-column">
     <h1>Good Granny,</h1>
     <br>
     <h2>la meilleure façon d'apprendre de nouvelles choses !</h2>
-    <%# <p>Change your life and learn to code at one of our campuses around the world.</p> %>
   </div>
+    <%# <button class="discover">Découvrez nos grannies</button> %>
+    <%= link_to "Découvrez nos grannies", grannies_path, class: "discover" %>
 </div>
 
 <div class="container">

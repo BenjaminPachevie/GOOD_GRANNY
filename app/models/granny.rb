@@ -1,7 +1,7 @@
 class Granny < ApplicationRecord
   belongs_to :user
   has_many :reservations, dependent: :destroy
-  has_many :categories
+  has_many :categories, dependent: :destroy
   accepts_nested_attributes_for :categories
   has_one_attached :photo
 
