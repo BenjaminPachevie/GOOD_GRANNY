@@ -4,9 +4,10 @@
     <% @user.reservations.each do |reservation| %>
       <li>
         <p>
-          Date: <%= reservation.date %> - Categorie: <%= reservation.category_booked %> - Mamie: <%= reservation.granny.name %>
+          Date: <%= reservation.start_date %> - Categorie: <%= reservation.category_booked %> - Mamie: <%= reservation.granny.name %>
         </p>
       </li>
+    <% end %>
   </ul>
 <% else %>
   <p>You do not have access</p>

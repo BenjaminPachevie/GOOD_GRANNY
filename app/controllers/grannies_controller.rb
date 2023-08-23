@@ -19,7 +19,7 @@ class GranniesController < ApplicationController
 
   def new
     @granny = Granny.new
-    @granny.categories.pluck
+    # @granny.categories.pluck
   end
 
   def create
