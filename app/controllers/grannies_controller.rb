@@ -58,6 +58,6 @@ class GranniesController < ApplicationController
 
   def granny_params
     params.required(:granny).permit(:name, :presentation, :location, :price,
-                                    :photo, categories_attributes: %i[name specialty id])
+                                    photos: [], categories_attributes: %i[name specialty id])
   end
 end
