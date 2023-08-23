@@ -11,6 +11,7 @@ class GranniesController < ApplicationController
 
   def new
     @granny = Granny.new
+    @granny.build_categories
   end
 
   def create
@@ -47,7 +48,8 @@ class GranniesController < ApplicationController
   private
 
   def granny_params
-    params.required(:granny).permit(:name, :presentation, :location, :photos[])
-
+    params.required(:granny).permit(:name, :presentation, :location,
+                                    categories_attributes: %i[name specialty],
+                                    photos: [])
   end
 end
