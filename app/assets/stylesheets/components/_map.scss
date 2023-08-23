@@ -1,12 +1,13 @@
 .mapboxgl-popup {
   max-width: 200px;
   border-radius: 2%;
-  color: rgb(178, 131, 207);
+  color: white;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  background: rgb(202, 172, 221)!important;
 }
 
 #map-sticky {
