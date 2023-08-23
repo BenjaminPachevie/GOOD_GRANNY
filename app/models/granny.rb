@@ -6,4 +6,6 @@ class Granny < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :presentation, length: { minimum: 14 }
   validates :location, :price, presence: true
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
