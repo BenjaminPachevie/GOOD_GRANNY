@@ -10,8 +10,7 @@
     <%= f.input :presentation, as: :text, label: "Petite description" %>
     <%= f.input :location %>
     <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }%>
     <%= f.submit "Ajouter" %>
   <% end %>
 </div>
-
