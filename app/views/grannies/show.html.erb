@@ -1,12 +1,43 @@
-<%= @granny.name %>
-<%= @granny.presentation %>
-<%= @granny.location %>
+
+
+
 
 <div class="container">
-  <%= simple_form_for [@granny, @reservation] do |f| %>
-    <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-    <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-    <%= f.input :category_booked, collection: @granny.categories.pluck(:name) %>
-    <%= f.submit %>
-  <% end %>
+  <div>
+    <h1>Meet your granny</h1>
+    <span><%= link_to "Nos grannies", grannies_path, class: "back-button" %></span>
+  </div>
+
+
+
+  <div class="template">
+
+    <div class="show-card col-12">
+
+      <div class="main-card-granny col-7">
+        <span class="name-granny"><%= @granny.name %></span>
+        <br>
+        <br>
+        <span class="categories">Couture</span>
+        <br>
+        <br>
+        <i class="fa-solid fa-location-dot" style="color: #FFCACC;"></i> <%= @granny.location %>
+        <br>
+        <br>
+        <span class=""><%= @granny.presentation %></span>
+      </div>
+
+      <div class="card-from-res col-4">
+        <%= simple_form_for [@granny, @reservation] do |f| %>
+          <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+          <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+          <%= f.input :category_booked, collection: @granny.categories.pluck(:name) %>
+          <%= f.submit "Réserver",:input_html =>{:class => "button-form"} %>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+
 </div>

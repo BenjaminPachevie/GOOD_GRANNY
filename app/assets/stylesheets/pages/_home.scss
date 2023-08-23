@@ -16,3 +16,7 @@ h1 {
   border-radius: 10px;
   padding: 5px;
 }
+
+.content {
+  min-height: calc(100vh - 100px);
+}
