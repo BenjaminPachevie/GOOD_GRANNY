@@ -2,6 +2,12 @@ class GranniesController < ApplicationController
 
   def index
     @grannies = Granny.all
+    @markers = @grannies.geocoded.map do |granny|
+      {
+        lat: granny.latitude,
+        lng: granny.longitude
+      }
+    end
   end
 
   def show
@@ -11,7 +17,7 @@ class GranniesController < ApplicationController
 
   def new
     @granny = Granny.new
-    @granny.build_categories
+    @granny.categories
   end
 
   def create
