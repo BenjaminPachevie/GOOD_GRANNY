@@ -11,12 +11,14 @@ class GranniesController < ApplicationController
 
   def new
     @granny = Granny.new
-    @granny.build_categories
+    @granny.categories.pluck
   end
 
   def create
     @granny = Granny.new(granny_params)
+
     @granny.user = current_user
+
     if @granny.save
       redirect_to granny_path(@granny)
     else
@@ -26,7 +28,6 @@ class GranniesController < ApplicationController
 
   def edit
     @granny = Granny.find(params[:id])
-
   end
 
   def update
@@ -48,8 +49,7 @@ class GranniesController < ApplicationController
   private
 
   def granny_params
-    params.required(:granny).permit(:name, :presentation, :location,
-                                    categories_attributes: %i[name specialty],
-                                    photos: [])
+    params.required(:granny).permit(:name, :presentation, :location, :price,
+                                    :photo, categories_attributes: %i[name specialty id])
   end
 end

@@ -3,7 +3,7 @@ class Granny < ApplicationRecord
   has_many :reservations, dependent: :destroy
   has_many :categories
   accepts_nested_attributes_for :categories
-  has_many_attached :photos
+  has_one_attached :photo
 
   validates :name, presence: true, uniqueness: true
   validates :presentation, length: { minimum: 14 }
