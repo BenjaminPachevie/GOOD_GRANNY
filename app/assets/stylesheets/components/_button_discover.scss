@@ -1,16 +1,15 @@
 .discover {
   border-radius: 5px;
-  border: 0;
   padding: 12px;
   background-color: #FFCACC;
   color: rgba(0, 0, 0, 0.491);
-  font-family: 'Roboto', cursive;
-  font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  position: relative;
-  top: 40px; left: 520px;
   text-decoration: none;
+  text-align: center;
+  width: 300px;
 }
 
 .button-form {
@@ -27,18 +26,17 @@
 }
 
 .back-button {
-  border-radius: 5px;
-  border: 0;
-  padding: 12px;
+  border-radius: 15px;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  padding: 8px;
   background-color: #FFCACC;
   color: rgba(0, 0, 0, 0.491);
-  font-family: 'Roboto', cursive;
   font-size: 26px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  position: absolute;
-  top: 112px; left: 1175px;
-  text-decoration: none;
+  margin-right: 12px;
 }
 
 .little-button {

@@ -3,9 +3,14 @@
 
 
 <div class="container">
-  <div>
+  <div class="title-show">
+    <span class="back-button">
+    <%= link_to(:action => 'index') do %>
+    <i class="fa-solid fa-arrow-left" style="color: #1c1717;"></i>
+    <% end %>
+    </span>
     <h1>Meet your granny</h1>
-    <span><%= link_to "Nos grannies", grannies_path, class: "back-button" %></span>
+    <%# <%= link_to "Nos grannies", grannies_path, class: "back-button" %>
   </div>
 
 
