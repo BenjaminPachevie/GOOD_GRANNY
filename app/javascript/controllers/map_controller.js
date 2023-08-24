@@ -3,6 +3,8 @@ import mapboxgl from 'mapbox-gl'
 
 // Connects to data-controller="map"
 export default class extends Controller {
+  static targets = [ 'containerMap', 'markers', 'granny' ]
+
   static values = {
     apiKey: String,
     markers: Array
@@ -11,12 +13,13 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
-      container: this.element,
+      container: this.containerMapTarget,
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+
   }
 
   #addMarkersToMap() {
@@ -34,5 +37,22 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
+
+  hoverMarkers(event) {
+    const granny = event.currentTarget.dataset.num
+    const granniesArray = this.grannyTargets.filter(function(x) { return x !== granny })
+    const markers = this.markersTargets.filter(function(x) {
+      if (x.dataset.num !== granny) {
+        return x
+      }
+    })
+    markers.forEach(marker => { marker.hidden = true })
+  }
+
+  displayMarkers() {
+    this.markersTargets.forEach(marker => {
+      marker.hidden = false
+    })
   }
 }
