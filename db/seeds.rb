@@ -17,7 +17,7 @@ User.create!(name: "Benjamin", email: "benjamin@lol.fr", password: "azerty")
 puts 'Done!'
 
 puts 'Creating grannies'
-josette = Granny.create!(name: "Josette", presentation: "Une grand-mère aux doigts verts qui transforme son arrière-cour en paradis fleuri. Le jardin de Josette est
+josette = Granny.create!(name: "Josette", presentation: "Une grand-mère à la main verte qui transforme son arrière-cour en paradis fleuri. Le jardin de Josette est
 un sanctuaire où elle cultive des fleurs vibrantes, des herbes aromatiques et des plantes exotiques du monde entier. ",
 location: "6 Place Saint-Augustin, 75008 PARIS", price: 45, user: User.all.sample)
 
