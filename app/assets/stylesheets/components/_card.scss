@@ -1,3 +1,5 @@
+//home
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -32,34 +34,7 @@
   font-style: italic;
 }
 
-.show-card {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: space-around;
-  font-family: 'Roboto', sans-serif;
-}
-
-.main-card-granny {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 40px;
-  padding: 30px;
-  background-color: #DBC4F0;
-  font-size: 16px;
-}
-
-.card-from-res {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 40px;
-  padding: 30px;
-  background-color: #E1D2F2;
-}
-
-
-.title-show {
-  display: flex;
-  align-items: baseline;
-}
+//mon profil
 
 .profile-card {
   margin-top: 40px;
@@ -77,6 +52,159 @@
   margin: 2%;
   background-color: #DBC4F0;
   font-size: 16px;
+}
+
+
+// index
+
+.img-carousel {
+  border-radius: 5px;
+}
+
+// grannies cards
+
+
+.grannies {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-gap: 16px;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-granny {
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-color: #DBC4F0 ;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.top-card-granny {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.name-granny {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  align-items: center;
+  font-size: 26px;
+  font-family: 'Courgette', cursive;
+}
+
+.categories {
+  color: white;
+  justify-content: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  font-size: 14px;
+  display: flex;
+  width: auto;
+  border: 1px solid #FAF3F0;
+  border-radius: 50px;
+  height: 30px;
+  background-color: #e2d2f2;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+
+// show
+
+.title-show {
+  display: flex;
+  align-items: baseline;
+}
+
+.show-card {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Roboto', sans-serif;
+}
+
+.categories-show {
+  color: white;
+  justify-content: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  font-size: 16px;
+  display: flex;
+  width: auto;
+  border: 1px solid #FAF3F0;
+  border-radius: 50px;
+  height: 30px;
+  background-color: #e2d2f2;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.specialties-show {
+  color: white;
+  justify-content: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  font-size: 16px;
+  display: flex;
+  width: auto;
+  border: 1px solid #FAF3F0;
+  border-radius: 50px;
+  height: 30px;
+  background-color: #ffcacc95;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.categories-flex{
+  display: flex;
+}
+
+.pictures {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.carousel-show-image {
+  width: auto;
+  height: 500px;
+  border-radius: 40px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin: 60px;
+}
+
+.main-card-granny {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 40px;
+  padding: 30px;
+  background-color: #DBC4F0;
+  font-size: 16px;
+}
+
+.card-from-res {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 40px;
+  padding: 30px;
+  background-color: #E1D2F2;
 }
 
 // Smallest device
@@ -112,91 +240,4 @@
   .cards {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-// grannies cards
-
-
-.grannies {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  color: white;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.card-granny {
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-color: #DBC4F0 ;
-  height: 240px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.top-card-granny {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.name-granny {
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  align-items: center;
-  font-size: 22px;
-  font-family: 'Courgette', cursive;
-}
-
-.categories {
-  color: white;
-  justify-content: center;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  align-items: center;
-  font-size: 12px;
-  display: flex;
-  width: 30%;
-  border: 1px solid #FAF3F0;
-  border-radius: 50px;
-  height: 30px;
-  background-color: #e2d2f2;
-}
-
-.categories-show {
-  color: white;
-  justify-content: center;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  align-items: center;
-  font-size: 16px;
-  display: flex;
-  width: auto;
-  border: 1px solid #FAF3F0;
-  border-radius: 50px;
-  height: 30px;
-  background-color: #e2d2f2;
-  padding: 5px;
-  margin: 0 5px;
-}
-
-.categories-flex{
-  display: flex;
-}
-
-.img-carousel {
-  border-radius: 5px;
-}
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  margin: 60px;
 }
