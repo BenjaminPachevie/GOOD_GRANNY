@@ -47,6 +47,8 @@
           <%= f.input :category_booked, collection: @granny.categories.pluck(:name) %>
           <%= f.submit "Réserver", class: "button-form" %>
         <% end %>
+        <p>Réservation pour <span id="total-nights">0</span> jours</p>
+        <p>Prix total : <span id="total-price">0</span> € </p>
       </div>
 
     </div>
