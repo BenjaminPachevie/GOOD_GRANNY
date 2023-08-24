@@ -23,7 +23,13 @@
         <span class="name-granny"><%= @granny.name %></span>
         <br>
         <br>
-        <span class="categories">Couture</span>
+        <span class="categories"><% @granny.categories.each do |category| %>
+        <%= category.name %>
+        <% end %></span>
+        <br>
+        <span><% @granny.categories.each do |category| %>
+        <p>Spécialité: <%= category.specialty%></p>
+        <% end %></span>
         <br>
         <br>
         <i class="fa-solid fa-location-dot" style="color: #FFCACC;"></i> <%= @granny.location %>
