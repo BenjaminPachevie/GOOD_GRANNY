@@ -10,4 +10,8 @@ class Reservation < ApplicationRecord
     end
   end
 
+  def pending?
+    status == 'pending'
+  end
+
 end

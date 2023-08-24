@@ -5,7 +5,16 @@ class ReservationsController < ApplicationController
     @granny = Granny.find(params[:granny_id])
     @reservation.user = current_user
     @reservation.granny = @granny
-    if @reservation.save!
+    if @reservation.save
+      redirect_to profile_path(current_user)
+    else
+      render 'grannies/show', status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+    if @reservation.update(reservation_params)
       redirect_to profile_path(current_user)
     else
       render 'grannies/show', status: :unprocessable_entity
@@ -17,7 +26,6 @@ class ReservationsController < ApplicationController
     @reservation.destroy
     redirect_to profile_path(current_user)
   end
-
 
   private
 
