@@ -21,6 +21,41 @@
       </li>
     <% end %>
   </ul>
+<div>
+  <% @my_reservations.each do |reservation| %>
+    <div>
+      <div>
+        <!-- if you're using cloudinary and activestorage -->
+        <%# <%= cl_image_tag booking.user.photo, class: 'avatar-bordered' %>
+        <div>
+          <div>
+            <%= reservation.user.name %>
+          </div>
+          <div>
+            <%= reservation.granny.name %>
+          </div>
+          <div>
+            <%= reservation.start_date %> - <%= reservation.end_date %>
+          </div>
+        </div>
+      </div>
+      <div>
+        <% if reservation.pending? %>
+          <%= simple_form_for reservation do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+            <%= f.submit 'Accept', class: 'btn btn-info' %>
+          <% end %>
+          <%= simple_form_for reservation do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+            <%= f.submit 'Reject', class: 'btn btn-light' %>
+          <% end %>
+        <% else %>
+          <p><%= reservation.status %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
 <% else %>
   <p>You do not have access</p>
 <% end %>
