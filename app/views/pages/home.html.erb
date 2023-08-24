@@ -13,9 +13,11 @@
 
 <div class="container">
   <div class="cards">
+    <%= link_to grannies_path(:query => "cuisine"), class: "text-decoration-none" do %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       Cuisiner
     </div>
+    <% end %>
 
     <div class="desc" style="">
       Profiter du savoir-faire de nos grannies et apprennez ou perfectionnez vos talents en cuisine. Leurs expériences personnelles vous permettront de découvrir les meilleures astuces !
@@ -25,13 +27,17 @@
       Nos grannies ont quelques astuces afin que votre jardin devienne un véritable oasis de verdure !
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://plus.unsplash.com/premium_photo-1678652879556-11451dff2f6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80)">
-      Jardiner
-    </div>
+    <%= link_to grannies_path(:query => "jardinage"), class: "text-decoration-none" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://plus.unsplash.com/premium_photo-1678652879556-11451dff2f6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80)">
+        Jardiner
+      </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1626274890657-e28d5b65b04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80)">
-      Couture
-    </div>
+    <%= link_to grannies_path(:query => "couture"), class: "text-decoration-none" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1626274890657-e28d5b65b04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80)">
+        Couture
+      </div>
+    <% end %>
 
     <div class="desc" style="">
       Si vous vous rêvez apprenti(e) styliste, nos grannies pourront vous partager les techniques de couture les plus cool !
@@ -40,10 +46,11 @@
     <div class="desc" style="">
       Nos grannies peuvent vous accompagner dans votre vie quotidienne et vous donner quelques astuces compatiblité, voyage, entrepreunariat !
     </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80)">
-      Conseils de vie
-    </div>
+    <%= link_to grannies_path(:query => "conseils de vie"), class: "text-decoration-none" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80)">
+        Conseils de vie
+      </div>
+    <% end %>
 
   </div>
 
