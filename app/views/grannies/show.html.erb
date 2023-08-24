@@ -9,7 +9,7 @@
     <i class="fa-solid fa-arrow-left" style="color: #1c1717;"></i>
     <% end %>
     </span>
-    <h1>Meet your granny</h1>
+    <span class="titles">Meet your granny</span>
     <%# <%= link_to "Nos grannies", grannies_path, class: "back-button" %>
   </div>
 
@@ -45,10 +45,10 @@
           <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
           <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
           <%= f.input :category_booked, collection: @granny.categories.pluck(:name) %>
-          <%= f.submit "Réserver", class: "button-form" %>
-        <% end %>
         <p>Réservation pour <span id="total-nights">0</span> jours</p>
         <p>Prix total : <span id="total-price">0</span> € </p>
+          <%= f.submit "Réserver", class: "button-form" %>
+        <% end %>
       </div>
 
     </div>
