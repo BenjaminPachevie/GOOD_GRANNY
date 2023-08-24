@@ -1,7 +1,10 @@
 
 
 
-<div class="container">
+<div class="container" data-controller="map"
+                       data-map-markers-value="<%= @markers.to_json %>"
+                       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+                       data-action="click->map#displayMarkers">
 
     <h1>Our grannies</h1>
 
@@ -12,7 +15,7 @@
           <div class="grannies">
             <% @grannies.each do |granny| %>
               <%= link_to granny_path(granny), class:"text-decoration-none" do %>
-                <div class="card-granny m-1">
+                <div class="card-granny m-1" data-num="<%= granny.id %>" data-map-target="granny" data-action="mouseover->map#hoverMarkers">
                   <div class="top-card-granny">
                     <div class="name-granny"><%= granny.name %></div>
                     <div class="categories">Couture</div>
@@ -46,10 +49,7 @@
 
       <div class="col-4">
 
-        <div id="map-sticky"
-              data-controller="map"
-              data-map-markers-value="<%= @markers.to_json %>"
-              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        <div id="map-sticky" data-map-target="containerMap">
         </div>
 
       </div>
