@@ -14,25 +14,48 @@
   </div>
 
 
+  <div class="pictures">
+                  <div id="carouselExampleControls" class="carousel slide">
+                    <span class="carousel-inner">
+                      <% active = "active" %>
+                      <% @granny.photos.each do |photo| %>
+                        <div class="carousel-item <%= active %>">
+                          <%= cl_image_tag photo.key, crop: :fill, class:"carousel-show-image" %>
+                        </div>
+                        <% active = "" %>
+                      <% end %>
+                    </span>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+  </div>
 
   <div class="template">
 
     <div class="show-card col-12">
 
       <div class="main-card-granny col-7">
-        <span class="name-granny"><%= @granny.name %></span>
+        <span class="name-granny-big"><%= @granny.name %></span>
         <br>
         <br>
         <div class="categories-flex">
-        <% @granny.categories.each do |category| %>
-        <span class="categories-show"><%= category.name %></span>
-        <% end %>
+          <% @granny.categories.each do |category| %>
+            <span class="categories-show"><%= category.name %></span>
+          <% end %>
         </div>
         <br>
-        <% @granny.categories.each do |category| %>
-        <span>Spécialité: <%= category.specialty%></span>
-        <% end %>
-        <br>
+        <div class="categories-flex">
+          <% @granny.categories.each do |category| %>
+            <span class="specialties-show"><%= category.specialty%></span>
+          <% end %>
+        </div>
         <br>
         <i class="fa-solid fa-location-dot" style="color: #FFCACC;"></i>  <%= @granny.location %>
         <br>
