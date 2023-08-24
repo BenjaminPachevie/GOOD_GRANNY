@@ -9,6 +9,7 @@ class GranniesController < ApplicationController
     end
 
     @markers = @grannies.geocoded.map do |granny|
+      @granny = granny
       {
         lat: granny.latitude,
         lng: granny.longitude,
@@ -34,7 +35,7 @@ class GranniesController < ApplicationController
 
     @granny.user = current_user
 
-    if @granny.save!
+    if @granny.save
       redirect_to granny_path(@granny)
     else
       render :new, status: :unprocessable_entity
