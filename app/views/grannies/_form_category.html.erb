@@ -1,0 +1,6 @@
+<%= f.simple_fields_for :categories, Category.new do |p| %>
+    <%= p.hidden_field :id %>
+    <%= p.input :name, as: :select, collection: Category::CATEGORIES, label: "2ème Catégorie", input_html: {'data-add-field-target':'valueinput'}%>
+    <%= p.input :specialty, label: "Spécialité(s)", input_html: {'data-add-field-target':'valueinput2'} %>
+    <button class='little-button' data-action="click->add-field#delete">Supprimer la deuxième catégorie</button>
+<% end %>

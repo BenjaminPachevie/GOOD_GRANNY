@@ -1,11 +1,17 @@
-<div class="container pt-2">
+<div class="container pt-2" data-controller="add-field">
   <%= simple_form_for @granny do |f| %>
     <%= f.input :name, label: "Son nom" %>
     <%= f.simple_fields_for :categories, Category.new do |p| %>
       <%= p.hidden_field :id %>
       <%= p.input :name, as: :select, collection: Category::CATEGORIES, label: "Catégories"%>
-      <%= p.input :specialty, label: "Spécialités" %>
+      <%= p.input :specialty, label: "Spécialité(s)" %>
+      <button class='little-button' data-action="click->add-field#add" data-add-field-target="addbutton">Ajouter une deuxième catégorie</button>
     <% end %>
+    <div>
+    <span data-add-field-target="span" class="d-none">
+      <%= render 'form_category', f: f %>
+    </span>
+    </div>
     <%= f.input :presentation, as: :text, label: "Description" %>
     <%= f.input :location,
       input_html: {data: {address_autocomplete_target: "location"}},
