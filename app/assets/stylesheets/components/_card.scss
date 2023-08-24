@@ -189,9 +189,14 @@
 
 .categories-flex{
   display: flex;
-
 }
 
 .img-carousel {
   border-radius: 5px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin: 60px;
 }
