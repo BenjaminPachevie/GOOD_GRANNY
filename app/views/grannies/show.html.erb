@@ -37,7 +37,7 @@
           <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
           <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
           <%= f.input :category_booked, collection: @granny.categories.pluck(:name) %>
-          <%= f.submit "Réserver",:input_html =>{:class => "button-form"} %>
+          <%= f.submit "Réserver", class: "button-form" %>
         <% end %>
       </div>
 
