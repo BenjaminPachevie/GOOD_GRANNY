@@ -53,7 +53,7 @@ class GranniesController < ApplicationController
   def destroy
     @granny = Granny.find(params[:id])
     @granny.destroy
-    redirect_to grannies_path
+    redirect_to profile_path(current_user)
   end
 
   private

@@ -38,3 +38,16 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-right: 12px;
 }
+
+.little-button {
+  border-radius: 5px;
+  border: 0;
+  padding: 12px;
+  background-color: #FFCACC;
+  color: rgba(0, 0, 0, 0.491);
+  font-family: 'Roboto', cursive;
+  font-size: 16px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
