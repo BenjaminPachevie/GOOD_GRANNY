@@ -1,12 +1,14 @@
 
 <div class="banner" style="background-image: url(<%= image_path 'banner.png' %>);">
-  <div class="container d-flex flex-column">
+  <div class="container banner-content">
     <h1>Good Granny,</h1>
     <br>
     <h2>la meilleure façon d'apprendre de nouvelles choses !</h2>
+    <br>
+    <br>
+    <%= link_to "Découvrez nos grannies", grannies_path, class: "discover" %>
   </div>
     <%# <button class="discover">Découvrez nos grannies</button> %>
-    <%= link_to "Découvrez nos grannies", grannies_path, class: "discover" %>
 </div>
 
 <div class="container">
