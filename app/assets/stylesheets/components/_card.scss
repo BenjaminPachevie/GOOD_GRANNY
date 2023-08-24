@@ -113,3 +113,64 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+// grannies cards
+
+
+.grannies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-granny {
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-color: #DBC4F0 ;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.top-card-granny {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.name-granny {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  align-items: center;
+  font-size: 22px;
+  font-family: 'Courgette', cursive;
+}
+
+.categories {
+  color: white;
+  justify-content: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  font-size: 16px;
+  display: flex;
+  width: 80px;
+  border: 1px solid #FAF3F0;
+  border-radius: 50px;
+  height: 30px;
+  background-color: #e2d2f2;
+}
+
+.img-carousel {
+  border-radius: 5px;
+}

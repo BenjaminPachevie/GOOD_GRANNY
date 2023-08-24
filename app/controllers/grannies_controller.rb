@@ -6,8 +6,8 @@ class GranniesController < ApplicationController
       {
         lat: granny.latitude,
         lng: granny.longitude,
-        marker_html: render_to_string(partial: "marker"),
-        info_window_html: render_to_string(partial: "info_window", locals: {granny: granny})
+        marker_html: render_to_string(partial: "marker")
+        # info_window_html: render_to_string(partial: "info_window", locals: {granny: granny})
 
       }
     end
