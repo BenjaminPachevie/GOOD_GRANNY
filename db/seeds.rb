@@ -264,8 +264,8 @@ Category.create!(name: 'Conseils de vie', specialty: "Art moderne", granny: luci
 Category.create!(name: 'Conseils de vie', specialty: "Aide aux devoirs et des conseils de vie", granny: micheline)
 Category.create!(name: 'Conseils de vie', specialty: "Comptabilité", granny: raymonde)
 Category.create!(name: 'Jardinage', specialty: "Plantes vertes", granny: raymonde)
-Category.create!(name: 'Conseils de vie', specialty: "Comptabilité", granny: raymonde)
-Category.create!(name: 'Conseils de vie', specialty: "Comptabilité", granny: raymonde)
+Category.create!(name: 'Cuisine', specialty: "Soupe au poulet maison", granny: madeleine)
+Category.create!(name: 'Conseils de vie', specialty: "Santé", granny: madeleine)
 Category.create!(name: 'Cuisine', specialty: "Pâtisseries", granny: huguette)
 Category.create!(name: 'Conseils de vie', specialty: "Entreprenauriat", granny: huguette)
 puts 'Categories done!'
