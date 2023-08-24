@@ -23,16 +23,18 @@
         <span class="name-granny"><%= @granny.name %></span>
         <br>
         <br>
-        <span class="categories"><% @granny.categories.each do |category| %>
-        <%= category.name %>
-        <% end %></span>
+        <div class="categories-flex">
+        <% @granny.categories.each do |category| %>
+        <span class="categories-show"><%= category.name %></span>
+        <% end %>
+        </div>
         <br>
-        <span><% @granny.categories.each do |category| %>
-        <p>Spécialité: <%= category.specialty%></p>
-        <% end %></span>
+        <% @granny.categories.each do |category| %>
+        <span>Spécialité: <%= category.specialty%></span>
+        <% end %>
         <br>
         <br>
-        <i class="fa-solid fa-location-dot" style="color: #FFCACC;"></i> <%= @granny.location %>
+        <i class="fa-solid fa-location-dot" style="color: #FFCACC;"></i>  <%= @granny.location %>
         <br>
         <br>
         <span class=""><%= @granny.presentation %></span>
