@@ -1,7 +1,13 @@
 class GranniesController < ApplicationController
 
   def index
-    @grannies = Granny.all
+    if params[:query].present?
+      @categories = Category.global_search(params[:query])
+      @grannies = Granny.where(categories: @categories)
+    else
+      @grannies = Granny.all
+    end
+
     @markers = @grannies.geocoded.map do |granny|
       {
         lat: granny.latitude,
@@ -11,7 +17,6 @@ class GranniesController < ApplicationController
 
       }
     end
-
   end
 
   def show
