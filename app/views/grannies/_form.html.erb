@@ -8,14 +8,7 @@
       <%= p.input :name, as: :select, collection: Category::CATEGORIES, label: "Catégories"%>
       <br>
       <%= p.input :specialty, label: "Spécialité(s)" %>
-      <br>
-      <button class='little-button' data-action="click->add-field#add" data-add-field-target="addbutton">Ajouter une deuxième catégorie</button>
     <% end %>
-    <div>
-    <span data-add-field-target="span" class="d-none">
-      <%= render 'form_category', f: f %>
-    </span>
-    </div>
     <br>
     <br>
     <%= f.input :presentation, as: :text, label: "Description" %>
