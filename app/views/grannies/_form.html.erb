@@ -1,10 +1,14 @@
-<div class="container pt-2" data-controller="add-field">
+<div class="container pt-2 m-2" data-controller="add-field">
   <%= simple_form_for @granny do |f| %>
+  <br>
     <%= f.input :name, label: "Son nom" %>
+    <br>
     <%= f.simple_fields_for :categories, Category.new do |p| %>
       <%= p.hidden_field :id %>
       <%= p.input :name, as: :select, collection: Category::CATEGORIES, label: "Catégories"%>
+      <br>
       <%= p.input :specialty, label: "Spécialité(s)" %>
+      <br>
       <button class='little-button' data-action="click->add-field#add" data-add-field-target="addbutton">Ajouter une deuxième catégorie</button>
     <% end %>
     <div>
@@ -12,12 +16,20 @@
       <%= render 'form_category', f: f %>
     </span>
     </div>
+    <br>
+    <br>
     <%= f.input :presentation, as: :text, label: "Description" %>
+    <br>
     <%= f.input :location,
       input_html: {data: {address_autocomplete_target: "location"}},
       wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+    <br>
     <%= f.input :price, label: "Prix" %>
+    <br>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Photo(s)"%>
-    <%= f.submit "Ajouter" %>
+    <br>
+    <%= f.submit "Ajouter", class:'button-form' %>
+    <br>
+    <br>
   <% end %>
 </div>
