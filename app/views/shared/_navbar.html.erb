@@ -10,7 +10,7 @@
 
     <%# Search form %>
 
-    <%= form_with url: grannies_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: grannies_path, method: :get, class: "d-flex w-50" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control string required",
@@ -33,10 +33,18 @@
           </li>
         <% end %>
         <li class="nav-item dropdown">
-          <%= image_tag "granny.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <% if current_user %>
+          <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <% else %>
+          <%= image_tag 'avatar.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <% end %>
             <% if current_user %>
               <%= link_to "Mon profil", profile_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Réservations", "#", class: "dropdown-item" %>
+              <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            <% else %>
+              <%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item" %>
             <% end %>
             <%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item" %>
