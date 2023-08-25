@@ -63,13 +63,27 @@
         <span class=""><%= @granny.presentation %></span>
       </div>
 
-      <div class="card-from-res col-4">
+      <div data-controller="dynamic-booking-price" data-dynamic-booking-price-price-value="<%= @granny.price %>" class="card-from-res col-4">
         <%= simple_form_for [@granny, @reservation] do |f| %>
-          <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-          <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+          <%= f.input :start_date, as: :string, input_html: {
+            data: {
+              controller: "datepicker",
+              datepicker_target: 'startDateInput',
+              dynamic_booking_price_target: 'startDateInput',
+              action: 'change->dynamic-booking-price#setDaysValue change->dynamic-booking-price#setPriceValue'
+              }
+            } %>
+          <%= f.input :end_date, as: :string, input_html: {
+            data: {
+              controller: "datepicker",
+              datepicker_target: 'endDateInput',
+              dynamic_booking_price_target: 'endDateInput',
+              action: 'change->dynamic-booking-price#setDaysValue change->dynamic-booking-price#setPriceValue'
+              }
+            } %>
           <%= f.input :category_booked, collection: @granny.categories.pluck(:name) %>
-        <p>Réservation pour <span id="total-nights">0</span> jours</p>
-        <p>Prix total : <span id="total-price">0</span> € </p>
+        <p>Réservation pour <span data-dynamic-booking-price-target="daysHolder">0</span> jours</p>
+        <p>Prix total : <span data-dynamic-booking-price-target="priceHolder"><%= @granny.price %></span> € </p>
           <%= f.submit "Réserver", class: "button-form" %>
         <% end %>
       </div>
