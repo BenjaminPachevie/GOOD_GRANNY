@@ -10,7 +10,7 @@
 
     <%# Search form %>
 
-    <%= form_with url: grannies_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: grannies_path, method: :get, class: "d-flex w-50" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control string required",
