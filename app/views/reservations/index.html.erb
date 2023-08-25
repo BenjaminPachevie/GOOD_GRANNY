@@ -1,33 +1,28 @@
-<% if current_user == @user %>
-
 <div class="container">
   <h1 class="titles">Mes réservations</h1>
 
-
   <div class="reservation-container">
-        <% @reservations.each do |reservation| %>
-          <div class="reservation-card">
-              Granny : <%= reservation.granny.name %>
-              <br>
-              Categorie :
-              <%= reservation.category_booked %>
-              <br>
-              Date :
-              <%= reservation.start_date %>
-              <br>
-              Statut :
-              <%= reservation.status %>
-          </div>
-        <% end %>
+    <% if @reservations.any? %>
+      <% @reservations.each do |reservation| %>
+        <div class="reservation-card">
+            Granny : <%= reservation.granny.name %>
+            <br>
+            Categorie :
+            <%= reservation.category_booked %>
+            <br>
+            Date :
+            <%= reservation.start_date %>
+            <br>
+            Statut :
+            <%= reservation.status %>
+        </div>
+      <% end %>
+    <% else %>
+    <span class="pending-card">
+      <p>T'attends quoi pour réserver ta granny ?</p>
+      <br>
+      <iframe src="https://giphy.com/embed/YHSENj45SsL84yK5ud" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
+    </span>
+    <% end %>
   </div>
-
-<%#
-  <h1 class="titles">Réservations de mes grannies</h1>
-
-    <div class="reservation-container">
-         <%# <%=  @user.first.booked_grannies %>
-    <%# </div> %>
-
 </div>
-
-<% end %>
