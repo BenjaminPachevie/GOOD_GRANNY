@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.granny = @granny
     if @reservation.save
-      redirect_to profile_path(current_user)
+      redirect_to reservations_path(current_user)
     else
       render 'grannies/show', status: :unprocessable_entity
     end
