@@ -5,15 +5,40 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Reservation.destroy_all
 User.destroy_all
 Granny.destroy_all
 Category.destroy_all
 
 puts 'Creating users'
-User.create!(name: "Marie", email: "marie@lol.fr", password: "azerty")
-User.create!(name: "Clara", email: "clara@lol.fr", password: "azerty")
-User.create!(name: "Laura", email: "laura@lol.fr", password: "azerty")
-User.create!(name: "Benjamin", email: "benjamin@lol.fr", password: "azerty")
+marie = User.create!(name: "Marie", email: "marie@lol.fr", password: "azerty")
+
+marie.photo.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar-marie.jpg')),
+  filename: "avatar-marie.jpg", content_type: 'image/png'
+)
+
+clara = User.create!(name: "Clara", email: "clara@lol.fr", password: "azerty")
+
+clara.photo.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar-clara.jpg')),
+  filename: "avatar-clara.jpg", content_type: 'image/png'
+)
+
+laura = User.create!(name: "Laura", email: "laura@lol.fr", password: "azerty")
+
+laura.photo.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar-laura.jpg')),
+  filename: "avatar-laura.jpg", content_type: 'image/png'
+)
+
+benjamin = User.create!(name: "Benjamin", email: "benjamin@lol.fr", password: "azerty")
+
+benjamin.photo.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar-benjamin.jpg')),
+  filename: "avatar-benjamin.jpg", content_type: 'image/png'
+)
+
 puts 'Done!'
 
 puts 'Creating grannies'
