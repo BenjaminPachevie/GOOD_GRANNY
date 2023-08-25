@@ -3,14 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :grannies, dependent: :destroy
   has_many :reservations
+  has_one_attached :photo
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, uniqueness: true
   validates :password, length: { in: 6..20 }
   validates :email, presence: true
-
-
-
-
 end
