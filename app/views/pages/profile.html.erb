@@ -45,12 +45,20 @@
 
     <div>
     <span class="titles">Mes grannies</span>
-    <div class="profile-card">
+    <div class="profile-card align-items-center justify-content-center">
       <% @user.grannies.each do |granny| %>
-      <div class="profile-card-granny">
+      <div class="profile-card-granny d-flex align-items-baseline justify-content-center">
         <p class="name-granny-profile"><%= granny.name %></p>
-        <%= link_to "Modifier ma granny", edit_granny_path(granny.id), class: 'little-button' %>
-        <%= link_to "Supprimer ma granny", granny_path(granny), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: 'little-button' %>
+        <%= link_to edit_granny_path(granny.id) do %>
+          <span class='little-button mx-3 inline-block'>
+           <i class="fa-solid fa-pen-to-square" style="color: #0E0000;"></i>
+          </span>
+        <% end %>
+        <%= link_to granny_path(granny), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"} do %>
+          <span class='little-button mx-1'>
+            <i class="fa-solid fa-trash" style="color: #0E0000;"></i>
+          </span>
+        <% end %>
       </div>
       <% end  %>
     </div>
