@@ -1,5 +1,11 @@
 class ReservationsController < ApplicationController
 
+  def index
+    @user = current_user
+    @my_reservations = Reservation.where(granny: current_user.grannies)
+    @reservations = Reservation.all
+  end
+
   def create
     @reservation = Reservation.new(reservation_params)
     @granny = Granny.find(params[:granny_id])

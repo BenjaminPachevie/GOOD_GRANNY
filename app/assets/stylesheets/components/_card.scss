@@ -39,9 +39,8 @@
 .profile-card {
   margin-top: 40px;
   margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -52,6 +51,30 @@
   margin: 2%;
   background-color: #DBC4F0;
   font-size: 16px;
+}
+
+
+.reservation-container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: 'Courgette', cursive;
+}
+
+.pending-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 40px;
+  padding: 30px;
+  margin: 2%;
+  background-color: #D3EDF7;
+  font-size: 16px;
+  text-align: center;
+}
+
+.pending-container {
+  display: flex;
+  justify-content: space-around;
 }
 
 

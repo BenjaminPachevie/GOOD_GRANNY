@@ -1,0 +1,25 @@
+
+<% if current_user == @user %>
+
+<div class="container">
+  <h1 class="titles">Mes réservations</h1>
+
+
+  <div class="reservation-container">
+        <% @reservations.each do |reservation| %>
+          <p class="pending-card">
+              Date :<%= reservation.start_date %>
+              <br>
+              Categorie :<%= reservation.category_booked %>
+              <br>
+              Granny :<%= reservation.granny.name %>
+          </p>
+        <% end %>
+  </div>
+
+
+  <h1 class="titles">Réservations de mes grannies</h1>
+
+</div>
+
+<% end %>

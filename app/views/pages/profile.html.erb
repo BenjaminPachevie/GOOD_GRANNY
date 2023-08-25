@@ -1,61 +1,61 @@
 <% if current_user == @user %>
 
-<div class="profile-card">
-  <% @user.grannies.each do |granny| %>
-  <div class="profile-card-granny">
-    <p class="name-granny-profile"><%= granny.name %></p>
-    <p>Présentation: <%= granny.presentation %></p>
-    <p>Adresse: <%= granny.location %></p>
-    <p>Prix: <%= granny.price %>€</p>
-    <%= link_to "Modifier ma granny", edit_granny_path(granny.id), class: 'little-button' %>
-    <%= link_to "Supprimer ma granny", granny_path(granny), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: 'little-button' %>
-  </div>
-  <% end  %>
-</div>
-  <ul>
-    <% @user.reservations.each do |reservation| %>
-      <li>
-        <p>
-          Date: <%= reservation.start_date %> - Categorie: <%= reservation.category_booked %> - Mamie: <%= reservation.granny.name %>
-        </p>
-      </li>
-    <% end %>
-  </ul>
-<div>
-  <% @my_reservations.each do |reservation| %>
-    <div>
-      <div>
-        <!-- if you're using cloudinary and activestorage -->
-        <%# <%= cl_image_tag booking.user.photo, class: 'avatar-bordered' %>
-        <div>
-          <div>
-            <%= reservation.user.name %>
+  <div class="container">
+    <span class="titles">Mes réservations en attente</span>
+
+    <div class="">
+
+      <div class="reservation-container">
+        <% @my_reservations.each do |reservation| %>
+          <div class="pending-card">
+            <div>
+              <!-- if you're using cloudinary and activestorage -->
+              <%# <%= cl_image_tag booking.user.photo, class: 'avatar-bordered' %>
+              <div>
+                <div class="name-granny-profile">
+                  <%= reservation.user.name %> avec Granny <%= reservation.granny.name %>
+                </div>
+                <div>
+
+                </div>
+                <div>
+                  Du <%= reservation.start_date %> au <%= reservation.end_date %>
+                </div>
+              </div>
+            </div>
+            <div class="pending-container" >
+              <% if reservation.pending? %>
+                <%= simple_form_for reservation do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                  <%= f.submit 'Accept', class: 'button-form' %>
+                <% end %>
+                <%= simple_form_for reservation do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                  <%= f.submit 'Reject', class: 'button-form' %>
+                <% end %>
+              <% else %>
+                <p><%= reservation.status %></p>
+              <% end %>
+            </div>
           </div>
-          <div>
-            <%= reservation.granny.name %>
-          </div>
-          <div>
-            <%= reservation.start_date %> - <%= reservation.end_date %>
-          </div>
-        </div>
-      </div>
-      <div>
-        <% if reservation.pending? %>
-          <%= simple_form_for reservation do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-            <%= f.submit 'Accept', class: 'btn btn-info' %>
-          <% end %>
-          <%= simple_form_for reservation do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-            <%= f.submit 'Reject', class: 'btn btn-light' %>
-          <% end %>
-        <% else %>
-          <p><%= reservation.status %></p>
         <% end %>
       </div>
+
     </div>
-  <% end %>
-</div>
+
+    <div>
+    <span class="titles">Mes grannies</span>
+    <div class="profile-card">
+      <% @user.grannies.each do |granny| %>
+      <div class="profile-card-granny">
+        <p class="name-granny-profile"><%= granny.name %></p>
+        <%= link_to "Modifier ma granny", edit_granny_path(granny.id), class: 'little-button' %>
+        <%= link_to "Supprimer ma granny", granny_path(granny), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: 'little-button' %>
+      </div>
+      <% end  %>
+    </div>
+    </div>
+  </div>
 <% else %>
   <p>You do not have access</p>
 <% end %>
