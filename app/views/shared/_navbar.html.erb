@@ -40,7 +40,7 @@
             <% end %>
             <%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item" %>
-            <%= link_to "Réservations", "#", class: "dropdown-item" %>
+            <%= link_to "Réservations", reservations_path, class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
           </div>
         </li>
